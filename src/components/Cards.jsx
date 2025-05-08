@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button';
 import CardBox from './CardBox';
+import { useState } from 'react';
 
 const languages = [
     {
@@ -36,6 +37,8 @@ const languages = [
 ];
 
 const Cards = () => {
+    const [active, setActive] = useState(languages[0])
+    const buttonLogic = (lang) => { setActive(lang) }
     return (
         <div className='container'>
             <div className="title">
@@ -44,14 +47,12 @@ const Cards = () => {
             <div className="cardContainer">
                 <div className="buttons">
                     {languages.map(elem => {
-                        return <Button title={elem.title} key={elem.id} />
+                        return <Button title={elem.title} key={elem.id} callback={() => buttonLogic(elem)} />
                     })}
                 </div>
 
                 <div className="cardContent">
-                    {languages.map(elem => {
-                        return <CardBox language={elem} key={elem.id} />
-                    })}
+                    <CardBox title={active.title} description={active.description} />
                 </div>
             </div>
         </div>

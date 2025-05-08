@@ -1,10 +1,11 @@
 import React from 'react'
 
-const CardBox = () => {
+const CardBox = (props) => {
+    const {title, description} = props
     return (
         <div>
-            <h3 className="cardTitle">HTML</h3>
-            <p className="cardBody">Lorem ipsum</p>
+            <h3 className="cardTitle">{title}</h3>
+            <p className="cardBody">{description}</p>
         </div>
     )
 }
