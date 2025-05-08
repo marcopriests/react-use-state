@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from './Button';
+import CardBox from './CardBox';
 
 const languages = [
     {
@@ -41,14 +43,13 @@ const Cards = () => {
             </div>
             <div className="cardContainer">
                 <div className="buttons">
-                    <button className="btn">HTML</button>
-                    <button className="btn">HTML</button>
-                    <button className="btn">HTML</button>
+                    {languages.map(elem => {
+                        return <Button title={elem.title} key={elem.id} />
+                    })}
                 </div>
 
                 <div className="cardContent">
-                    <h3 className="cardTitle">HTML</h3>
-                    <p className="cardBody">Lorem ipsum</p>
+                    <CardBox />
                 </div>
             </div>
         </div>
