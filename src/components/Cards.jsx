@@ -49,7 +49,9 @@ const Cards = () => {
                 </div>
 
                 <div className="cardContent">
-                    <CardBox />
+                    {languages.map(elem => {
+                        return <CardBox language={elem} key={elem.id} />
+                    })}
                 </div>
             </div>
         </div>
