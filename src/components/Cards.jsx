@@ -37,7 +37,7 @@ const languages = [
 ];
 
 const Cards = () => {
-    const [active, setActive] = useState(languages[0])
+    const [active, setActive] = useState(null)
     const buttonLogic = (lang) => { setActive(lang) }
     return (
         <div className='container'>
@@ -52,7 +52,8 @@ const Cards = () => {
                 </div>
 
                 <div className="cardContent">
-                    <CardBox title={active.title} description={active.description} />
+                    {active === null ? <CardBox title="Nessun linguaggio selezionato" description="Seleziona un linguaggio per visualizzare le informazioni" /> : <CardBox title={active.title} description={active.description} />}
+
                 </div>
             </div>
         </div>
