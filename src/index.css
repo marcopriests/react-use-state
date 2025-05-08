@@ -29,7 +29,7 @@ body {
   gap: 10px;
 }
 
-.buttons .btn{
+.btn{
   padding: 10px 20px;
   border: none;
   background-color: #0d6efd;
@@ -37,9 +37,15 @@ body {
   color: white;
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.buttons .btn:hover, .buttons .btn:active {
+.active{
+  background-color: #ffc107;
+  color: black;
+}
+
+.buttons .btn:hover {
   background-color: #ffc107;
   color: black;
 }
