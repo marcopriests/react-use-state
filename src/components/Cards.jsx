@@ -47,12 +47,17 @@ const Cards = () => {
             <div className="cardContainer">
                 <div className="buttons">
                     {languages.map(elem => {
-                        return <Button title={elem.title} key={elem.id} callback={() => buttonLogic(elem)} />
+                        const isActive = active && elem.id === active.id ? 'active' : ''
+                        return <Button title={elem.title} key={elem.id} isActive={isActive} callback={() => buttonLogic(elem)} />
                     })}
                 </div>
 
                 <div className="cardContent">
-                    {active === null ? <CardBox title="Nessun linguaggio selezionato" description="Seleziona un linguaggio per visualizzare le informazioni" /> : <CardBox title={active.title} description={active.description} />}
+                    {
+                        !active
+                            ? <CardBox title="Nessun linguaggio selezionato" description="Seleziona un linguaggio per visualizzare le informazioni" />
+                            : <CardBox title={active.title} description={active.description} />
+                    }
 
                 </div>
             </div>
